@@ -3,11 +3,11 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from backend.app.config import UPLOAD_DIR
-from backend.app.database import engine, Base, SessionLocal
-from backend.app.models import Project
-from backend.app.seed import seed_database
-from backend.app.routers import (
+from app.config import UPLOAD_DIR
+from app.database import engine, Base, SessionLocal
+from app.models import Project
+from app.seed import seed_database
+from app.routers import (
     auth, projects, reports, feed, review, admin, notifications
 )
 

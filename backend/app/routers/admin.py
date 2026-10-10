@@ -5,15 +5,15 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
 from sqlalchemy import desc
 
-from backend.app.database import get_db
-from backend.app.models import (
+from app.database import get_db
+from app.models import (
     User, Department, Category, CitizenReport, ModerationFlag, AuditLog
 )
-from backend.app.schemas import (
+from app.schemas import (
     UserResponse, RoleUpdateRequest, DepartmentCreate, DepartmentResponse,
     CategoryCreate, CategoryResponse, ModerationFlagResponse, AuditLogResponse
 )
-from backend.app.auth import require_role
+from app.auth import require_role
 
 router = APIRouter(prefix="/api/admin", tags=["admin"])
 

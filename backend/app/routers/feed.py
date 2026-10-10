@@ -4,17 +4,17 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
 from sqlalchemy import desc, or_
 
-from backend.app.database import get_db
-from backend.app.models import (
+from app.database import get_db
+from app.models import (
     CitizenReport, CivicPostLike, CivicPostComment, ModerationFlag,
     User, Notification, AuditLog
 )
-from backend.app.schemas import (
+from app.schemas import (
     CitizenReportResponse, CommentCreate, CommentResponse,
     ModerationFlagCreate, ModerationFlagResponse
 )
-from backend.app.auth import get_current_user, get_optional_user, require_role
-from backend.app.routers.reports import _build_report_response
+from app.auth import get_current_user, get_optional_user, require_role
+from app.routers.reports import _build_report_response
 
 router = APIRouter(prefix="/api/feed", tags=["feed"])
 

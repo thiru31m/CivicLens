@@ -5,18 +5,18 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
 from sqlalchemy import desc
 
-from backend.app.database import get_db
-from backend.app.models import (
+from app.database import get_db
+from app.models import (
     CitizenReport, ReportReviewAction, Project, ProjectUpdateHistory,
     Department, Category, User, Notification, AuditLog
 )
-from backend.app.schemas import (
+from app.schemas import (
     CitizenReportResponse, ReviewTransitionRequest, LinkProjectRequest,
     VerifyCreateProjectRequest, MatchingAnalysisResponse, CandidateMatch
 )
-from backend.app.auth import require_role
-from backend.app.matching import matching_engine
-from backend.app.routers.reports import _build_report_response
+from app.auth import require_role
+from app.matching import matching_engine
+from app.routers.reports import _build_report_response
 
 router = APIRouter(prefix="/api/review", tags=["review"])
 

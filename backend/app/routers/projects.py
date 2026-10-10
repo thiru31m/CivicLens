@@ -5,18 +5,18 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
 from sqlalchemy import or_, desc
 
-from backend.app.database import get_db
-from backend.app.models import (
+from app.database import get_db
+from app.models import (
     Project, ProjectMilestone, ProjectUpdateHistory, Department, Category,
     CitizenReport, User, AuditLog
 )
-from backend.app.schemas import (
+from app.schemas import (
     ProjectResponse, ProjectCreate, ProjectUpdate,
     ProjectMilestoneCreate, ProjectMilestoneResponse,
     ProjectUpdateHistoryResponse, CitizenReportResponse
 )
-from backend.app.auth import require_role, get_current_user
-from backend.app.matching import haversine_distance_km
+from app.auth import require_role, get_current_user
+from app.matching import haversine_distance_km
 
 router = APIRouter(prefix="/api/projects", tags=["projects"])
 

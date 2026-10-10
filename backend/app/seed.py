@@ -1,12 +1,12 @@
 import json
 from datetime import datetime, timedelta
-from backend.app.database import engine, Base, SessionLocal
-from backend.app.models import (
+from app.database import engine, Base, SessionLocal
+from app.models import (
     User, Department, Category, Project, ProjectMilestone, ProjectUpdateHistory,
     CitizenReport, EvidenceAttachment, ReportReviewAction, CivicPostLike,
     CivicPostComment, Notification, AuditLog
 )
-from backend.app.auth import hash_password
+from app.auth import hash_password
 
 
 def seed_database():

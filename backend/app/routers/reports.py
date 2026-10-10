@@ -8,21 +8,21 @@ from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File, 
 from sqlalchemy.orm import Session
 from sqlalchemy import desc
 
-from backend.app.database import get_db
-from backend.app.models import (
+from app.database import get_db
+from app.models import (
     CitizenReport, EvidenceAttachment, ReportReviewAction, Project,
     Category, User, Notification, AuditLog
 )
-from backend.app.schemas import (
+from app.schemas import (
     CitizenReportResponse, CitizenReportCreate, EvidenceResponse,
     MatchingAnalysisResponse, CandidateMatch, CitizenResponseRequest,
     ReportReviewActionResponse
 )
-from backend.app.auth import get_current_user, get_optional_user, require_role
-from backend.app.config import (
+from app.auth import get_current_user, get_optional_user, require_role
+from app.config import (
     UPLOAD_DIR, ALLOWED_EXTENSIONS, ALLOWED_MIME_TYPES, MAX_FILE_SIZE
 )
-from backend.app.matching import matching_engine
+from app.matching import matching_engine
 
 router = APIRouter(prefix="/api/reports", tags=["reports"])
 

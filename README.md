@@ -209,3 +209,6 @@ CivicLens uses an abstract SQLAlchemy data layer. To transition to a production 
 - **Neutral Terminology**: Labels avoid sensationalism or premature accusations. Reports are termed *"Observations"*, not violations or crimes.
 - **Engagement $\neq$ Truth**: Likes and comment counts reflect community attention, never automatic validation.
 - **Evidence Auditability**: Content moderation flags can hide abusive posts from the public feed while preserving full audit trails for legal and municipal compliance.
+=======
+# CivicLens
+>>>>>>> 0ecfa8794e5c30f8fe8284a94a18da1793476b61
